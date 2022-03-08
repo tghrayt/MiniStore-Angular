@@ -26,8 +26,9 @@ export class LoginService {
     .pipe(
       map((response: any) => {
         if(response){
-          return response;
           localStorage.setItem('token', response.token);
+          return response;
+          
         }  })
     );
     

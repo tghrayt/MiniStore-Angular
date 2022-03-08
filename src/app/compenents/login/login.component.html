@@ -22,7 +22,7 @@
                     Username
                 </label>
 
-                  <input type="text" id="usernameLogin" name="usernameLogin" placeholder="" class="form-control" aria-describedby="emailHelp">
+                  <input type="text" id="usernameLogin" name="usernameLogin" [formControl]="userName" placeholder="" class="form-control" aria-describedby="emailHelp">
                
               </div>
            
@@ -34,13 +34,13 @@
                       </svg>
                     Password
                 </label>
-                  <input type="password" id="passwordLogin" name="passwordLogin" placeholder="" class="form-control" aria-describedby="emailHelp">
+                  <input type="password" id="passwordLogin" name="passwordLogin" [formControl]="password" placeholder="" class="form-control" aria-describedby="emailHelp">
               </div>
            
               <div class="mb-3">
                 <!-- Button -->
                 <div class="controls">
-                  <button class="btn btn-success">Login</button>
+                  <button class="btn btn-success"  (click)="Onlogin()">Login</button>
                 </div>
               </div>
             </fieldset>
