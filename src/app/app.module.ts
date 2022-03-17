@@ -16,6 +16,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { HandleErrorsInteceptor } from './helper/HandleErrorsInteceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { ProductComponent } from './compenents/product/product.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    ProductComponent,
+
   ],
   imports: [
     BrowserModule,

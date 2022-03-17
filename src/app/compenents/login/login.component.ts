@@ -29,9 +29,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.urlWebService,this.user).subscribe(
       
       (response) => {
-        debugger;
         if(response){
-          this.router.navigate(['']);
+          location.reload();
         } 
         else{
           this.userName.setValue('');
@@ -45,6 +44,7 @@ export class LoginComponent implements OnInit {
     );
     this.userName.setValue('');
     this.password.setValue('');
+   
   }
 
  

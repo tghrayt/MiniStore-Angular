@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { User } from 'src/app/models/User';
-import { LoginService } from 'src/app/services/login.service';
+
 
 @Component({
   selector: 'app-header',
@@ -26,6 +24,7 @@ export class HeaderComponent implements OnInit {
   OnLogout(){
     localStorage.removeItem('token');
     this.isExistToken = false;
+    location.reload();
   }
 
   
