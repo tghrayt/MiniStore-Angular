@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
       
       (response) => {
         if(response){
-          location.reload();
+         
+          //this.router.navigate(['admin']);
+          location.assign('/admin');
         } 
         else{
           this.userName.setValue('');

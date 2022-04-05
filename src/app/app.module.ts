@@ -17,6 +17,7 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { HandleErrorsInteceptor } from './helper/HandleErrorsInteceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductComponent } from './compenents/product/product.component';
+import { AdminComponent } from './compenents/admin/admin.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProductComponent } from './compenents/product/product.component';
     FooterComponent,
     LayoutComponent,
     ProductComponent,
+    AdminComponent,
 
   ],
   imports: [

@@ -43,6 +43,27 @@ private options: any ;
     
   }
 
+  public deleteProduct (urlWebService : string,idProdcut:number | undefined): Observable<boolean> {
+
+    this.options ={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      }),
+      withCredentials: true
+    };
+    return this.httpClient.delete<boolean>(this.urlApi+urlWebService+'/'+idProdcut,this.options)
+    .pipe(
+      map((response: any) => {
+        if(response){
+          console.info('Product has been deleted');
+          return response;
+          
+        }  })
+    ); 
+
+  }
+
 
 
 }

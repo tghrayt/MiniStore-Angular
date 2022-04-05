@@ -1,30 +1,27 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class AdminComponent implements OnInit {
+
 
   public listProduct : Product[] = [];
   private urlWebService : string ='';
-
   constructor(private productService : ProductService) { }
 
   ngOnInit(): void {
-    this.getProduct();   
+    this.getProduct();
   }
-
   public getProduct(){
     this.urlWebService ='Product/products';
     this.productService.getProduct(this.urlWebService).subscribe(
       data => {
           this.listProduct = data;
-          console.log(this.listProduct);
           return this.listProduct;         
         } ,
         error  => {
@@ -34,5 +31,18 @@ export class ProductComponent implements OnInit {
     );
   }
 
-
+  public supprimerProduit(productId :number | undefined){
+    this.urlWebService ='Product';
+    this.productService.deleteProduct(this.urlWebService,productId).subscribe(
+      data => {
+          this.ngOnInit();   
+          return data;     
+         
+        } ,
+        error  => {
+          console.log(error);
+        } 
+      
+    );
+  }
 }
