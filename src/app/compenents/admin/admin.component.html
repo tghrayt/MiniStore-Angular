@@ -43,11 +43,9 @@
                           
                         </tr> 
 
-
-                        
-    
-                                    <!-- Modal -->
+                        <!-- Modal -->
                                 <div class="modal fade" id="test{{produit.productId}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <form #userName="ngForm" (ngSubmit)="updateProduit(produit)"> 
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                       <div class="modal-header">
@@ -56,7 +54,7 @@
                                       </div>
                                       <div class="modal-body">
                                         <div>                                 
-                                          <form class="row g-3">
+                                          
                                             <div class="col-md-12">
                                               <label for="inputlibelle" class="form-label">Libellé de produit</label>
                                               <input type="text" class="form-control" id="inputlibelle" value="{{produit.productName}}">
@@ -78,15 +76,16 @@
                                               </select>
                                             </div>
                                             
-                                          </form>
+                                         
                                       </div>
                                       </div>
                                       <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-success">Valider</button>
+                                        <button type="button" id="closeModal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Valider</button>
                                       </div>
                                     </div>
                                   </div>
+                                  </form>
                                 </div>
                                                         
                     </tbody>

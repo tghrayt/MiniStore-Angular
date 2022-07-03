@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -38,6 +39,23 @@ export class AdminComponent implements OnInit {
           this.ngOnInit();   
           return data;     
          
+        } ,
+        error  => {
+          console.log(error);
+        } 
+      
+    );
+  }
+
+
+  public updateProduit(product : Product){
+    this.urlWebService ='Product';
+    this.productService.updateProduit(this.urlWebService,product.productId,product).subscribe(
+      data => {
+        
+          this.ngOnInit();   
+          return data;     
+          
         } ,
         error  => {
           console.log(error);

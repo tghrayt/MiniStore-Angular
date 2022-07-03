@@ -65,5 +65,27 @@ private options: any ;
   }
 
 
+  public updateProduit (urlWebService : string,idProdcut:number | undefined , product : Product): Observable<Product> {
+
+    this.options ={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      }),
+      withCredentials: true
+    };
+    return this.httpClient.put<Product>(this.urlApi+urlWebService+'/'+idProdcut,product,this.options)
+    .pipe(
+      map((response: any) => {
+        if(response){
+          console.info('Product has been updated');
+          return response;
+          
+        }  })
+    ); 
+
+  }
+
+
 
 }
