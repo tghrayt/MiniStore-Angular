@@ -37,8 +37,8 @@ export class AdminComponent implements OnInit {
     this.productService.deleteProduct(this.urlWebService,productId).subscribe(
       data => {
           this.ngOnInit();   
-          return data;     
-         
+          //return data;     
+          location.reload();
         } ,
         error  => {
           console.log(error);
@@ -54,8 +54,8 @@ export class AdminComponent implements OnInit {
       data => {
         
           this.ngOnInit();   
-          return data;     
-          
+          // return data;     
+          location.reload();
         } ,
         error  => {
           console.log(error);
